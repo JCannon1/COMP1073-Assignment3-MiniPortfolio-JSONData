@@ -12,6 +12,7 @@
         LoadProjectContent();
         LoadContactContent();
     }
+    // Loads the main page using AJAX
     function LoadIndexContent() {
         let index = document.getElementById("index");
         let FirstParagraph;
@@ -23,6 +24,7 @@
                 myHTMLContent = this.responseText;
             }
         }
+    // added event listener for main page
     paragraphXHR.addEventListener("load", function () {
         index.innerHTML = myHTMLContent;
         switch (document.title) {
@@ -54,6 +56,7 @@
                 break;
         }
     }
+    // Loads the first project using AJAX
     function LoadProjectContent() {
         let FirstProject = document.getElementById("FirstProject");
         let FirstParagraph;
@@ -65,6 +68,7 @@
                 myContent = this.responseText;
             }
         }
+    // Loads the second project using AJAX
     function LoadProjectContent() {
         let SecondProject = document.getElementById("SecondProject");
         let FirstParagraph;
@@ -76,6 +80,7 @@
                 myHTMLContent = this.responseText;
             }
         }
+    // Loads the third project using AJAX
     function LoadProjectContent() {
         let ThirdProject = document.getElementById("ThirdProject");
         let FirstParagraph;
@@ -87,6 +92,7 @@
                 myThirdContent = this.responseText;
             }
         }
+    // Loads the contact page using AJAX
     function LoadContactContent() {
         let contact = document.getElementById("contact");
         let firstHeadingContact;
