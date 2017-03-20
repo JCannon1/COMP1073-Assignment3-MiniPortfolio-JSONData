@@ -1,6 +1,6 @@
 // File name: contact.js 
 // Author's name: Jesse Cannon 
-// Web site name: http://jessecannon-miniportfolio.azurewebsites.net/projects.html 
+// Web site name: http://comp1073-jessecannon-assignment3-miniportfolio-json-data.azurewebsites.net/projects.html
 // File description: contact page JavaScript for my mini portfolio 
 
 // project page JavaScript
