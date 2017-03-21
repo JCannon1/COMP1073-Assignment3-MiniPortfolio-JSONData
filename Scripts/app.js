@@ -4,7 +4,7 @@
 // File description: main page JavaScript for my mini portfolio 
 
 "use strict";
-
+// start of the IIFE
 (function () {
 
     function Start() {
@@ -16,16 +16,88 @@
     function LoadIndexContent() {
         let index = document.getElementById("index");
         let FirstParagraph;
-        let paragraphXHR = new XMLHttpRequest();
-        paragraphXHR.open("GET", "../index.html", true);
-        paragraphXHR.send();
-        paragraphXHR.onreadystatechange = function () {
+        let firstParagraphXHR = new XMLHttpRequest();
+        firstParagraphXHR.open("GET", "../index.html", true);
+        firstParagraphXHR.send();
+        firstParagraphXHR.onreadystatechange = function () {
             if ((this.readyState === 4) && (this.status === 200)) {
-                myHTMLContent = this.responseText;
+                FirstParagraph = this.responseText;
             }
         }
    
-    function LoadPageContent() {
+    // Loads the first project using AJAX
+    function LoadProjectContent() {
+        let project1 = document.getElementById("project1");
+        let FirstProject;
+        let firstProjectXHR = new XMLHttpRequest();
+        firstProjectXHR.open("GET", "../project.html", true);
+        firstProjectXHR.send();
+        firstProjectXHR.onreadystatechange = function () {
+            if ((this.readyState === 4) && (this.status === 200)) {
+                FirstProject = this.responseText;
+            }
+        }
+    // Loads the second project using AJAX
+    function LoadProjectContent() {
+        let project2 = document.getElementById("project2");
+        let SecondProject;
+        let secondParagraphXHR = new XMLHttpRequest();
+        secondParagraphXHR.open("GET", "../project.html", true);
+        secondParagraphXHR.send();
+        secondParagraphXHR.onreadystatechange = function () {
+            if ((this.readyState === 4) && (this.status === 200)) {
+                SecondProject = this.responseText;
+            }
+        }
+    // Loads the third project using AJAX
+    function LoadProjectContent() {
+        let project3 = document.getElementById("project3");
+        let ThirdProject;
+        let thirdProjectXHR = new XMLHttpRequest();
+        thirdProjectXHR.open("GET", "../project.html", true);
+        thirdProjectXHR.send();
+        thirdProjectXHR.onreadystatechange = function () {
+            if ((this.readyState === 4) && (this.status === 200)) {
+                ThirdProject = this.responseText;
+            }
+        }
+    // Loads the contact page using AJAX
+    function LoadContactContent() {
+        let contact = document.getElementById("contact");
+        let FirstContactParagraph;
+        let contactXHR = new XMLHttpRequest();
+        contactXHR.open("GET", "../contact.html", true);
+        contactXHR.send();
+        contactXHR.onreadystatechange = function () {
+            if ((this.readyState === 4) && (this.status === 200)) {
+                FirstContactParagraph = this.responseText;
+            }
+        }
+
+    // added event listener for each page
+    paragraphXHR.addEventListener("load", function () {
+        index.innerHTML = myHTMLContent;
+        switch (document.title) {
+            case "Home":
+                    var index = document.getElementById("index");
+                    break;
+                case "Projects1":
+                    var projects = document.getElementById("project1");
+                    break;
+                    case "Projects2":
+                    var projects = document.getElementById("project2");
+                    break;
+                    case "Projects3":
+                    var projects = document.getElementById("project3");
+                    break;
+                case "Contact":
+                    var contact = document.getElementById("contact");
+                    break;
+            }
+
+
+             // Loads content for each page
+         function LoadPageContent() {
          switch (document.title) {
             case "Home":
                 LoadHomePage();
@@ -38,74 +110,8 @@
                 break;
         }
     }
-    // Loads the first project using AJAX
-    function LoadProjectContent() {
-        let FirstProject = document.getElementById("FirstProject");
-        let FirstParagraph;
-        let paragraphXHR = new XMLHttpRequest();
-        paragraphXHR.open("GET", "../project.html", true);
-        paragraphXHR.send();
-        paragraphXHR.onreadystatechange = function () {
-            if ((this.readyState === 4) && (this.status === 200)) {
-                myContent = this.responseText;
-            }
-        }
-    // Loads the second project using AJAX
-    function LoadProjectContent() {
-        let SecondProject = document.getElementById("SecondProject");
-        let FirstParagraph;
-        let secondParagraphXHR = new XMLHttpRequest();
-        secondParagraphXHR.open("GET", "../project.html", true);
-        secondParagraphXHR.send();
-        secondParagraphXHR.onreadystatechange = function () {
-            if ((this.readyState === 4) && (this.status === 200)) {
-                myHTMLContent = this.responseText;
-            }
-        }
-    // Loads the third project using AJAX
-    function LoadProjectContent() {
-        let ThirdProject = document.getElementById("ThirdProject");
-        let FirstParagraph;
-        let thirdProjectXHR = new XMLHttpRequest();
-        thirdProjectXHR.open("GET", "../project.html", true);
-        thirdProjectXHR.send();
-        thirdProjectXHR.onreadystatechange = function () {
-            if ((this.readyState === 4) && (this.status === 200)) {
-                myThirdContent = this.responseText;
-            }
-        }
-    // Loads the contact page using AJAX
-    function LoadContactContent() {
-        let contact = document.getElementById("contact");
-        let firstHeadingContact;
-        let contactXHR = new XMLHttpRequest();
-        contactXHR.open("GET", "../contact.html", true);
-        contactXHR.send();
-        contactXHR.onreadystatechange = function () {
-            if ((this.readyState === 4) && (this.status === 200)) {
-                myContactContent = this.responseText;
-            }
-        }
-
-    // added event listener for each page
-    paragraphXHR.addEventListener("load", function () {
-        index.innerHTML = myHTMLContent;
-        switch (document.title) {
-            case "Home":
-                    var homeLink = document.getElementById("homeLink");
-                    homeLink.setAttribute("class", "active");
-                    break;
-                case "Projects":
-                    var projectsLink = document.getElementById("projectsLink");
-                    projectsLink.setAttribute("class", "active");
-                    break;
-                case "Contact":
-                    var contactLink = document.getElementById("contactLink");
-                    contactLink.setAttribute("class", "active");
-                    break;
-            }
         });
-    }
+}
 
 
 
@@ -187,5 +193,5 @@ FirstContactParagraph.textContent = mySecondContent;
     )
     break;
 }
-
-})();
+// end of the IIFE 
+})();  
