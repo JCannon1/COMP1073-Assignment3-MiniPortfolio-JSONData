@@ -14,6 +14,6 @@ console.log(firstHeadingContact.textContent);
 // connecting myContent to my contact.html page 
 var FirstContactParagraph = document.getElementById("FirstContactParagraph");
 
-var myContent = "If you would like to contact me for further information of my work please feel free to reach me by leaving your Name, Number and a short message of what you would like to discuss."
+var myContactContent = "If you would like to contact me for further information of my work please feel free to reach me by leaving your Name, Number and a short message of what you would like to discuss."
 
-FirstContactParagraph.textContent = myContent; 
+FirstContactParagraph.textContent = myContactContent; 
