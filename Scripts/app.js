@@ -24,25 +24,7 @@
                 myHTMLContent = this.responseText;
             }
         }
-    // added event listener for main page
-    paragraphXHR.addEventListener("load", function () {
-        index.innerHTML = myHTMLContent;
-        switch (document.title) {
-            case "Home":
-                    var homeLink = document.getElementById("homeLink");
-                    homeLink.setAttribute("class", "active");
-                    break;
-                case "Projects":
-                    var projectsLink = document.getElementById("projectsLink");
-                    projectsLink.setAttribute("class", "active");
-                    break;
-                case "Contact":
-                    var contactLink = document.getElementById("contactLink");
-                    contactLink.setAttribute("class", "active");
-                    break;
-            }
-        });
-    }
+   
     function LoadPageContent() {
          switch (document.title) {
             case "Home":
@@ -104,6 +86,26 @@
                 myContactContent = this.responseText;
             }
         }
+
+    // added event listener for each page
+    paragraphXHR.addEventListener("load", function () {
+        index.innerHTML = myHTMLContent;
+        switch (document.title) {
+            case "Home":
+                    var homeLink = document.getElementById("homeLink");
+                    homeLink.setAttribute("class", "active");
+                    break;
+                case "Projects":
+                    var projectsLink = document.getElementById("projectsLink");
+                    projectsLink.setAttribute("class", "active");
+                    break;
+                case "Contact":
+                    var contactLink = document.getElementById("contactLink");
+                    contactLink.setAttribute("class", "active");
+                    break;
+            }
+        });
+    }
 
 
 
